@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="422.0" prefWidth="984.0" style="-fx-background-color: #b3b3cc; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane alignment="CENTER" hgap="20.0" layoutX="15.0" layoutY="12.0" prefHeight="402.0" prefWidth="953.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TitledPane animated="false" collapsible="false" prefHeight="600.0" prefWidth="600.0" text="Issued Report">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebf0fa;">
+                     <children>
+                        <GridPane layoutX="47.0" layoutY="54.0" prefHeight="176.0" prefWidth="100.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="42.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" text="Item No">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="Item Name" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="From Date" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="TO Date" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="Item Name">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="154.0" layoutY="54.0" prefHeight="176.0" prefWidth="132.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="142.0" AnchorPane.topAnchor="42.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField />
+                              <TextField GridPane.rowIndex="1" />
+                              <DatePicker GridPane.rowIndex="2" />
+                              <DatePicker prefWidth="132.0" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <Button layoutX="118.00000000000003" layoutY="209.0" mnemonicParsing="false" style="-fx-background-radius: 20;" text="Report" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font name="Perpetua Titling MT Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+              </content>
+               <font>
+                  <Font name="Serif Bold" size="15.0" />
+               </font>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" prefHeight="600.0" prefWidth="600.0" text="Received Report" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Serif Bold" size="15.0" />
+               </font>
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebf0fa;">
+                     <children>
+                        <GridPane layoutX="47.0" layoutY="54.0" prefHeight="176.0" prefWidth="100.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="42.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" text="Item No">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="Item Name" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="From Date" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="TO Date" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="Item Name">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="154.0" layoutY="54.0" prefHeight="176.0" prefWidth="132.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="142.0" AnchorPane.topAnchor="42.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField />
+                              <TextField GridPane.rowIndex="1" />
+                              <DatePicker GridPane.rowIndex="2" />
+                              <DatePicker prefWidth="132.0" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <Button layoutX="118.00000000000003" layoutY="209.0" mnemonicParsing="false" style="-fx-background-radius: 20;" text="Report" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font name="Perpetua Titling MT Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" prefHeight="600.0" prefWidth="600.0" text="Full Report" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Serif Bold" size="15.0" />
+               </font>
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebf0fa;">
+                     <children>
+                        <GridPane alignment="CENTER" layoutX="29.0" layoutY="48.0" prefHeight="241.0" prefWidth="242.0" vgap="12.0" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="48.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Stock Report" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Perpetua Titling MT Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="issued items Report" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Perpetua Titling MT Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="received items Report" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Perpetua Titling MT Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="null items report" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Perpetua Titling MT Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
