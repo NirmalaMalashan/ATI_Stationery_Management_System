@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="422.0" prefWidth="984.0" style="-fx-background-color: #b3b3cc; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="422.0" prefWidth="984.0" style="-fx-background-color: #b3b3cc; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ati.ati.ManageController">
    <children>
       <GridPane alignment="CENTER" hgap="20.0" layoutX="15.0" layoutY="12.0" prefHeight="402.0" prefWidth="953.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
         <columnConstraints>
@@ -56,18 +57,18 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TextField prefHeight="26.0" prefWidth="239.0" />
-                              <TextField prefHeight="8.0" prefWidth="239.0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtAItemNo" prefHeight="26.0" prefWidth="239.0" />
+                              <TextField fx:id="txtAItemName" prefHeight="8.0" prefWidth="239.0" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <ButtonBar layoutX="229.0" layoutY="269.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="31.80000000000001" AnchorPane.rightAnchor="31.80000000000001">
                            <buttons>
-                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Clear">
+                              <Button mnemonicParsing="false" onAction="#AClear" style="-fx-background-radius: 20;" text="Clear">
                                  <font>
                                     <Font name="Perpetua Titling MT Bold" size="15.0" />
                                  </font>
                               </Button>
-                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Save">
+                              <Button mnemonicParsing="false" onAction="#ASave" style="-fx-background-radius: 20;" text="Save">
                                  <font>
                                     <Font name="Perpetua Titling MT Bold" size="15.0" />
                                  </font>
@@ -84,7 +85,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebf0fa;">
                      <children>
-                        <GridPane layoutX="42.0" layoutY="56.0" prefHeight="138.0" prefWidth="100.0" AnchorPane.bottomAnchor="146.4" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="56.0">
+                          <GridPane layoutX="42.0" layoutY="56.0" prefHeight="138.0" prefWidth="100.0" AnchorPane.bottomAnchor="146.4" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="56.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
@@ -114,18 +115,18 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TextField prefHeight="26.0" prefWidth="239.0" />
-                              <TextField prefHeight="8.0" prefWidth="239.0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtDItemNo" onKeyTyped="#as" prefHeight="26.0" prefWidth="239.0" />
+                              <ComboBox fx:id="cboxName" onAction="#find" prefHeight="27.0" prefWidth="255.0" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <ButtonBar layoutX="239.0" layoutY="268.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="32.80000000000001" AnchorPane.rightAnchor="21.80000000000001">
                            <buttons>
-                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Clear">
+                              <Button mnemonicParsing="false" onAction="#DClear" style="-fx-background-radius: 20;" text="Clear">
                                  <font>
                                     <Font name="Perpetua Titling MT Bold" size="15.0" />
                                  </font>
                               </Button>
-                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="DelETE">
+                              <Button mnemonicParsing="false" onAction="#DDelete" style="-fx-background-radius: 20;" text="Delete">
                                  <font>
                                     <Font name="Perpetua Titling MT Bold" size="15.0" />
                                  </font>

@@ -13,7 +13,7 @@ public class MainController {
     private AnchorPane MainPanel;
 
     public void Null(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("attendance.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("Null.fxml"));
         MainPanel.getChildren().setAll(pane);
     }
 

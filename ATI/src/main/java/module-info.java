@@ -3,7 +3,9 @@ module ati.ati {
     requires javafx.fxml;
             
             requires com.dlsc.formsfx;
-                        
+    requires java.sql;
+    requires org.xerial.sqlitejdbc;
+
     opens ati.ati to javafx.fxml;
     exports ati.ati;
 }
