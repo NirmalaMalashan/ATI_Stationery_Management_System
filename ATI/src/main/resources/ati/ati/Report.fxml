@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -11,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="422.0" prefWidth="984.0" style="-fx-background-color: #b3b3cc; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="422.0" prefWidth="984.0" style="-fx-background-color: #b3b3cc; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ati.ati.ReportController">
    <children>
       <GridPane alignment="CENTER" hgap="20.0" layoutX="15.0" layoutY="12.0" prefHeight="402.0" prefWidth="953.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
         <columnConstraints>
@@ -58,7 +60,7 @@
                                     <Font name="Bodoni MT Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" text="Item Name">
+                              <Label alignment="CENTER" text="Item">
                                  <font>
                                     <Font name="Bodoni MT Bold" size="18.0" />
                                  </font>
@@ -76,16 +78,28 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TextField />
-                              <TextField GridPane.rowIndex="1" />
-                              <DatePicker GridPane.rowIndex="2" />
-                              <DatePicker prefWidth="132.0" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtIINo" onKeyTyped="#AIINo" />
+                              <DatePicker fx:id="DateIF" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></DatePicker>
+                              <DatePicker fx:id="DateIT" prefWidth="132.0" GridPane.rowIndex="3">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></DatePicker>
+                              <ComboBox fx:id="cboxNameR" onAction="#findR" prefHeight="27.0" prefWidth="255.0" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ComboBox>
                            </children>
                         </GridPane>
-                        <Button layoutX="118.00000000000003" layoutY="209.0" mnemonicParsing="false" style="-fx-background-radius: 20;" text="Report" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0">
+                        <Button layoutX="118.00000000000003" layoutY="209.0" mnemonicParsing="false" onAction="#btnIRE" style="-fx-background-radius: 20;" text="Report" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0">
                            <font>
                               <Font name="Perpetua Titling MT Bold" size="15.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                      </children></AnchorPane>
               </content>
@@ -93,14 +107,14 @@
                   <Font name="Serif Bold" size="15.0" />
                </font>
             </TitledPane>
-            <TitledPane animated="false" collapsible="false" prefHeight="600.0" prefWidth="600.0" text="Received Report" GridPane.columnIndex="1">
+            <TitledPane animated="false" collapsible="false" prefHeight="600.0" prefWidth="600.0" text="Supply Report" GridPane.columnIndex="1">
                <font>
                   <Font name="Serif Bold" size="15.0" />
                </font>
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ebf0fa;">
                      <children>
-                        <GridPane layoutX="47.0" layoutY="54.0" prefHeight="176.0" prefWidth="100.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="42.0">
+                        <GridPane layoutX="59.0" layoutY="66.0" prefHeight="152.0" prefWidth="110.0" AnchorPane.bottomAnchor="147.0" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="42.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
@@ -131,7 +145,7 @@
                                     <Font name="Bodoni MT Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" text="Item Name">
+                              <Label alignment="CENTER" text="Item ">
                                  <font>
                                     <Font name="Bodoni MT Bold" size="18.0" />
                                  </font>
@@ -149,16 +163,28 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TextField />
-                              <TextField GridPane.rowIndex="1" />
-                              <DatePicker GridPane.rowIndex="2" />
-                              <DatePicker prefWidth="132.0" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtSINO" onKeyTyped="#ASINO" />
+                              <DatePicker fx:id="dateSF" GridPane.rowIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></DatePicker>
+                              <DatePicker fx:id="DateST" prefWidth="132.0" GridPane.rowIndex="3">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></DatePicker>
+                              <ComboBox fx:id="cboxNameS" onAction="#findS" prefHeight="27.0" prefWidth="255.0" GridPane.rowIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ComboBox>
                            </children>
                         </GridPane>
-                        <Button layoutX="118.00000000000003" layoutY="209.0" mnemonicParsing="false" style="-fx-background-radius: 20;" text="Report" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0">
+                        <Button layoutX="118.00000000000003" layoutY="209.0" mnemonicParsing="false" onAction="#btnSRE" style="-fx-background-radius: 20;" text="Report" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0">
                            <font>
                               <Font name="Perpetua Titling MT Bold" size="15.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                      </children>
                   </AnchorPane>
@@ -182,25 +208,37 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="Stock Report" textAlignment="CENTER">
+                              <Button mnemonicParsing="false" onAction="#StockRe" style="-fx-background-radius: 20;" text="Stock Report" textAlignment="CENTER">
                                  <font>
                                     <Font name="Perpetua Titling MT Bold" size="15.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
-                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="issued items Report" GridPane.rowIndex="1">
+                              <Button mnemonicParsing="false" onAction="#IitemRe" style="-fx-background-radius: 20;" text="Issued items Report" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Perpetua Titling MT Bold" size="15.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
-                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="received items Report" GridPane.rowIndex="2">
+                              <Button mnemonicParsing="false" onAction="#SitemRE" style="-fx-background-radius: 20;" text="Supply items Report" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Perpetua Titling MT Bold" size="15.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
-                              <Button mnemonicParsing="false" style="-fx-background-radius: 20;" text="null items report" GridPane.rowIndex="3">
+                              <Button mnemonicParsing="false" onAction="#NitemRE" style="-fx-background-radius: 20;" text="Null items report" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Perpetua Titling MT Bold" size="15.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
                            </children>
                         </GridPane>

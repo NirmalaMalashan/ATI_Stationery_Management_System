@@ -4,12 +4,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
+import java.security.PublicKey;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,8 +50,7 @@ public class IssuedController {
     public void DesClear(ActionEvent actionEvent) {
         txtDes.setText(null);
     }
-
-    public void Clear(ActionEvent actionEvent) {
+    public void clearr(){
         cboxName.setValue(null);
         txtItemNo.setText(null);
         txtIssuedTo.setText(null);
@@ -56,22 +59,43 @@ public class IssuedController {
         txtDes.setText(null);
         lblQty.setText(null);
     }
+    public void Clear(ActionEvent actionEvent) {
+        clearr();
+    }
 
-    public void Save(ActionEvent actionEvent) throws SQLException {
-        Connection con= Dbconnecter.connect();
-        PreparedStatement ps =null;
-        String sql= "INSERT INTO issued(Item_No,Issued_To,Issued_No,Issued_Qty,Des,Date) VALUES(?,?,?,?,?,?)";
-        ps= con.prepareStatement(sql);
-        ps.setString(1, txtItemNo.getText());
-        ps.setString(2, txtIssuedTo.getText());
-        ps.setString(3, txtIssuedNo.getText());
-        ps.setString(4, txtIssuedQty.getText());
-        ps.setString(5, txtDes.getText());
-        ps.setString(6, String.valueOf(Today));
-        ps.execute();
-        ps.close();
-        con.close();
-        Qtyadd();
+    public void Save(ActionEvent actionEvent)  {
+        Connection con= null;
+        try {
+            con = Dbconnecter.connect();
+            PreparedStatement ps =null;
+            String sql= "INSERT INTO issued(Item_No,Issued_To,Issued_No,Issued_Qty,Des,Date) VALUES(?,?,?,?,?,?)";
+            ps= con.prepareStatement(sql);
+            ps.setString(1, txtItemNo.getText());
+            ps.setString(2, txtIssuedTo.getText());
+            ps.setString(3, txtIssuedNo.getText());
+            ps.setString(4, txtIssuedQty.getText());
+            ps.setString(5, txtDes.getText());
+            ps.setString(6, String.valueOf(Today));
+            ps.execute();
+            ps.close();
+            con.close();
+            Qtyadd();
+            clearr();
+            Notifications notification1 = Notifications.create()
+                    .title("SUCCESSFUL!")
+                    .text("Reduce Issued Items To Database.")
+                    .hideAfter(Duration.seconds(5))
+                    .position(Pos.BOTTOM_RIGHT);
+            notification1.show();
+        } catch (SQLException e) {
+            Notifications notification = Notifications.create()
+                    .title("UNSUCCESSFUL!")
+                    .text("Could Not Reduce Issued Item To Database.\n Please Try Again. ")
+                    .hideAfter(Duration.seconds(5))
+                    .position(Pos.BOTTOM_RIGHT);
+            notification.show();
+        }
+
     }
 
     public void as(KeyEvent keyEvent) throws SQLException {

@@ -4,11 +4,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,8 +37,6 @@ public class SupplyController {
     public void initialize() throws SQLException {
         // TODO Auto-generated method stub
         loadnames();
-
-
     }
     public void loadnames() throws SQLException {
         Connection con= Dbconnecter.connect();
@@ -50,9 +52,9 @@ public class SupplyController {
     public void DesClear(ActionEvent actionEvent) throws SQLException {
        txtDescription.setText(null);
 
-    }
 
-    public void Clear(ActionEvent actionEvent) {
+    }
+    public void Clearr(){
         cboxName.setValue(null);
         txtItemNo.setText(null);
         txtSFrom.setText(null);
@@ -61,22 +63,45 @@ public class SupplyController {
         txtDescription.setText(null);
         lblQty.setText(null);
     }
+    public void Clear(ActionEvent actionEvent) {
+       Clearr();
+    }
 
-    public void Save(ActionEvent actionEvent) throws SQLException {
-        Connection con= Dbconnecter.connect();
-        PreparedStatement ps =null;
-        String sql= "INSERT INTO supply(Item_No,Supply_From,Supply_No,Supply_Qty,Des,Date) VALUES(?,?,?,?,?,?)";
-        ps= con.prepareStatement(sql);
-        ps.setString(1, txtItemNo.getText());
-        ps.setString(2, txtSFrom.getText());
-        ps.setString(3, txtSNo.getText());
-        ps.setString(4, txtSQty.getText());
-        ps.setString(5, txtDescription.getText());
-        ps.setString(6, String.valueOf(Today));
-        ps.execute();
-        ps.close();
-        con.close();
-        Qtyadd();
+    public void Save(ActionEvent actionEvent)  {
+
+        Connection con= null;
+        try {
+            con = Dbconnecter.connect();
+            PreparedStatement ps =null;
+            String sql= "INSERT INTO supply(Item_No,Supply_From,Supply_No,Supply_Qty,Des,Date) VALUES(?,?,?,?,?,?)";
+            ps= con.prepareStatement(sql);
+            ps.setString(1, txtItemNo.getText());
+            ps.setString(2, txtSFrom.getText());
+            ps.setString(3, txtSNo.getText());
+            ps.setString(4, txtSQty.getText());
+            ps.setString(5, txtDescription.getText());
+            ps.setString(6, String.valueOf(Today));
+            ps.execute();
+            ps.close();
+            con.close();
+            Qtyadd();
+            Notifications notification1 = Notifications.create()
+                    .title("SUCCESSFUL!")
+                    .text("Added Supply Items To Database.")
+                    .hideAfter(Duration.seconds(5))
+                    .position(Pos.BOTTOM_RIGHT);
+            notification1.show();
+            Clearr();
+
+        } catch (SQLException e) {
+            Notifications notification = Notifications.create()
+                    .title("UNSUCCESSFUL!")
+                    .text("Could Not Add Supply Item To Database.\n Please Try Again. ")
+                    .hideAfter(Duration.seconds(5))
+                    .position(Pos.BOTTOM_RIGHT);
+            notification.show();
+        }
+
     }
 
     public void find(ActionEvent actionEvent) throws SQLException {

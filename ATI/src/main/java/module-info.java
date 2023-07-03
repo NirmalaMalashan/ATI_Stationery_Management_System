@@ -5,6 +5,8 @@ module ati.ati {
             requires com.dlsc.formsfx;
     requires java.sql;
     requires org.xerial.sqlitejdbc;
+    requires jasperreports;
+    requires org.controlsfx.controls;
 
     opens ati.ati to javafx.fxml;
     exports ati.ati;
